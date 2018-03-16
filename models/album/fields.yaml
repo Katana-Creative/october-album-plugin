@@ -1,0 +1,22 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+
+    title:
+        label: Album Title
+        type: text
+
+    description:
+        label: Album Description
+        type: textarea
+        size: large
+    album_category:
+        label: Album Category
+        type: dropdown
+        options: listCategories
+    gallery:
+        label: Gallery
+        type: fileupload
+        mode: image

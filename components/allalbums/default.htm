@@ -1,0 +1,67 @@
+
+<div class="row gallery-links category-row">
+
+    {% if categories | length < 0 %}
+        <h2>
+            <p>
+                Please add album categories from backend.
+            </p>
+        </h2>
+    {% else %}
+
+    {% for category in categories %}
+        <div class="col-sm-3 category-item">
+            <a href="{{ url('/gallery') }}/{{ category.id }}" class="">
+            <button type="button" name="button" id="{{ category.id }}" class="default-btn bound text-uppercase gallery-btn">
+                <p>
+                    {{ category.title }}
+                </p>
+            </button>
+            </a>
+        </div>
+    {% endfor %}
+
+    {% endif %}
+</div>
+<div class="albums">
+
+    <div class="row album-links">
+
+
+        {% if albums | length > 0 %}
+
+            {% for album in albums %}
+        <div class="col-sm-4 {{ album.album_category }} album-thumb">
+            <a href="{{ url('/gallery/album/') }}/{{ album.id }}">
+
+                {% for thumb in album.gallery | slice (0,1) %}
+                    <img src="{{ thumb.thumb(290,290,{'mode':'crop'}) }}" alt="">
+                {% endfor %}
+
+                <div class="thumb-info">
+                    <p class="album-title text-uppercase">
+                       {{ album.title }}
+                    </p>
+                    <p class="album-info">
+                        {{ album.description }}
+                    </p>
+                    <p class="album-date">
+                        {{ album.created_at | date ('d M Y') }}
+                    </p>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+
+        {% else %}
+
+            <h1>
+                <p>
+                    No albums found for this category
+                </p>
+            </h1>
+
+        {% endif %}
+    </div>
+
+</div>

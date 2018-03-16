@@ -1,0 +1,9 @@
+1.0.1: First version of Albums
+1.1.0:
+    - Installed Tables
+    - Initialize the script.
+    - create_albums_table.php
+1.2.0:
+    - Installed Tables Categories
+    - Initialize the script.
+    - create_album_categories_table.php

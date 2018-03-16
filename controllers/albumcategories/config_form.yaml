@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Album Category
+
+# Model Form Field configuration
+form: $/lzodevelopment/album/models/albumcategory/fields.yaml
+
+# Model Class name
+modelClass: LzoDevelopment\Album\Models\AlbumCategory
+
+# Default redirect location
+defaultRedirect: lzodevelopment/album/albumcategories
+
+# Create page
+create:
+    title: Create Album Category
+    redirect: lzodevelopment/album/albumcategories/update/:id
+    redirectClose: lzodevelopment/album/albumcategories
+
+# Update page
+update:
+    title: Edit Album Category
+    redirect: lzodevelopment/album/albumcategories
+    redirectClose: lzodevelopment/album/albumcategories
+
+# Preview page
+preview:
+    title: Preview Album Category
